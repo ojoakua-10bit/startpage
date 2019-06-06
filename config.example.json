@@ -1,0 +1,75 @@
+{
+  "title": "Welcome",
+  "background_backend": "internal",
+  "default_search_engine": "google",
+  "favorites": [
+    {
+      "name": "tech stuff",
+      "links": [
+        {
+          "name": "Stack Overflow",
+          "url": "https://stackoverflow.com"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com"
+        },
+        {
+          "name": "Arch Wiki",
+          "url": "https://wiki.archlinux.org"
+        }
+      ]
+    },
+    {
+      "name": "reddit",
+      "base_url": "https://old.reddit.com/",
+      "links": [
+        {
+          "name": "r/linux",
+          "url": "r/linux"
+        },
+        {
+          "name": "r/linuxmasterrace",
+          "url": "r/linuxmasterrace"
+        },
+        {
+          "name": "r/unixporn",
+          "url": "r/unixporn"
+        },
+        {
+          "name": "r/programmerhumor",
+          "url": "r/programmerhumor"
+        },
+        {
+          "name": "r/windows10",
+          "url": "r/windows10"
+        }
+      ]
+    },
+    {
+      "name": "other services",
+      "links": [
+        {
+          "name": "Youtube",
+          "url": "https://www.youtube.com"
+        },
+        {
+          "name": "Google Maps",
+          "url": "https://www.google.com/maps"
+        },
+        {
+          "name": "Google Translate",
+          "url": "https://translate.google.com"
+        },
+        {
+          "name": "Wikipedia",
+          "url": "https://en.wikipedia.org"
+        },
+        {
+          "name": "Wiktionary",
+          "url": "https://en.wiktionary.org"
+        }
+      ]
+    }
+  ]
+}

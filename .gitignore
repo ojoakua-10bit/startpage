@@ -1,0 +1,8 @@
+.idea/
+vendor/
+.vscode/
+*.iml
+index.html
+config.json
+img/backgrounds/*
+!img/backgrounds/PUT_BACKGROUND_IMAGES_HERE
