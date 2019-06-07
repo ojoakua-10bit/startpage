@@ -1,4 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Kosugi Maru', sans-serif;
     color: #e2e3e5;
+}
+
+[class*="lg-"] {
+    width: 100%;
+    display: inline-table;
+}
+
+.header-wrapper {
+    padding-top: 80px;
+}
+
+.content-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input#search-box {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 20pt;
+    background: none;
+    border: none;
+    color: #e2e3e5;
+    padding: 20px 0;
+}
+
+input#search-box:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #c4c5c7;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (min-width: 960px) {
+    h1.main-header {
+        font-size: 3em;
+    }
+}
+
+.lg-1 {
+    width: 8.33%;
+}
+
+.lg-2 {
+    width: 16.66%;
+}
+
+.lg-3 {
+    width: 25%;
+}
+
+.lg-4 {
+    width: 33.33%;
+}
+
+.lg-5 {
+    width: 41.66%;
+}
+
+.lg-6 {
+    width: 50%;
+}
+
+.lg-7 {
+    width: 58.33%;
+}
+
+.lg-8 {
+    width: 66.66%;
+}
+
+.lg-9 {
+    width: 75%;
+}
+
+.lg-10 {
+    width: 83.33%;
+}
+
+.lg-11 {
+    width: 91.66%;
+}
+
+.lg-12 {
+    width: 100%;
+}
+
+.favorites {
+    width: 100%;
+    max-width: 800px;
+}
+
+.fav-group {
+    margin: 10px;
+    padding: 10px;
+    min-height: 200px !important;
+    background-color: #00000080;
+    border-radius: 5px;
+}
+
+@supports (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
+    .fav-group {
+        background-color: #00000040;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+footer {
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
 }

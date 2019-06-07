@@ -22,15 +22,23 @@ $backend = $config->background_backend;
 $engine = $config->default_search_engine;
 $favorites = $config->favorites;
 
-$backgrounds = scandir(BACKGROUND_DIR);
-if (count($backgrounds) <= 2) {
+$files = scandir(BACKGROUND_DIR);
+$backgrounds = [];
+foreach ($files as $file) {
+    $token = explode('.', $file);
+    $ext = $token[count($token) - 1];
+    if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png') {
+        array_push($backgrounds, $file);
+    }
+}
+
+if (count($backgrounds) == 0) {
     $background = '#1b1b1b';
 } else {
-    $data = array_slice($backgrounds, 2);
-    if (count($data) > 1) {
-        $background = $data[rand(0, count($data) - 1)];
+    if (count($backgrounds) > 1) {
+        $background = $backgrounds[rand(0, count($backgrounds) - 1)];
     } else {
-        $background = $data[0];
+        $background = $backgrounds[0];
     }
 }
 
@@ -46,24 +54,33 @@ if ($background[0] !== '#') {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #80808080 0%, #202020a0 75%, #1b1b1b 100%), <?=$background?>;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
-<body style="background: <?=$background?>">
+<body>
 <div class="header-wrapper">
-    <h1 class="main-header japanese-text"><?=$title?></h1>
+    <h1 class="main-header text-center"><?=$title?></h1>
 </div>
 <form id="search" action="https://www.google.com/search">
-    <input placeholder="Search" id="search-box" type="search" name="q">
+    <input placeholder="Search" class="lg-12 text-center" id="search-box" type="text" name="q">
 </form>
-<div>
+<div class="favorites content-center">
     <?php
     foreach ($favorites as $favitem) {
+        echo "<div class='fav-group lg-3 content-center'>";
         echo "<h3>$favitem->name</h3>";
         if (isset($favitem->base_url)) {
             $base_url = $favitem->base_url;
         } else {
             $base_url = '';
         }
-        echo "<div>";
         foreach ($favitem->links as $link) {
             echo "<div><a href='".$base_url.$link->url."'>$link->name</a></div>";
         }
